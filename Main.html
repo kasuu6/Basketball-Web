@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Training Hub</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Basketball Training Hub</h1>
+        <p>Master the fundamentals with our easy-to-follow tutorials</p>
+    </div>
+
+    <div class="login-container">
+        <button class="login-button" onclick="location.href='login.html'">
+            Login / Sign Up
+        </button>
+    </div>
+
+    <div class="tutorial-grid">
+        <button class="tutorial-button" onclick="location.href='Dribbling.html'">
+            Basic Dribbling 🏀
+        </button>
+        <button class="tutorial-button" onclick="location.href='Shooting.html'">
+            Shooting Form 🎯
+        </button>
+        <button class="tutorial-button" onclick="location.href='Layup.html'">
+            Layup Techniques 🏃‍♂️
+        </button>
+        <button class="tutorial-button" onclick="location.href='Passing.html'">
+            Passing Skills 🤝
+        </button>
+        <button class="tutorial-button" onclick="location.href='Defense.html'">
+            Defense Basics 🛡️
+        </button>
+        <button class="tutorial-button" onclick="location.href='Conditioning.html'">
+            Conditioning 💪
+        </button>
+    </div>
+</body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+        text-align: center;
+        min-height: 100vh;
+    }
+
+    .header {
+        background-color: #000000;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        width: 90%;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tutorial-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 90%;
+        max-width: 500px;
+        margin: 0 auto;
+        padding-bottom: 40px;
+    }
+
+    .tutorial-button {
+        background-color: #020202;
+        color: white;
+        padding: 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: clamp(16px, 2.5vw, 18px);
+        transition: transform 0.2s;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .login-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .login-button {
+        background-color: #020202;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: clamp(14px, 2vw, 16px);
+        transition: all 0.2s ease;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media screen and (max-width: 768px) {
+        body {
+            padding: 10px;
+        }
+
+        .login-container {
+            position: static;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .login-button {
+            width: 80%;
+            max-width: 300px;
+            padding: 15px;
+        }
+
+        .header {
+            padding: 15px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        .tutorial-grid {
+            max-width: 700px;
+        }
+
+        .tutorial-button {
+            padding: 25px;
+        }
+    }
+
+    /* Maintain hover effects */
+    .tutorial-button:hover {
+        transform: scale(1.05);
+        background-color: #1f1e1e;
+    }
+
+    .login-button:hover {
+        background-color: #1f1e1e;
+        transform: scale(1.05);
+    }
+</style>
+</html>
