@@ -3,46 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basketball Defense Tutorial</title>
+    <title>Basketball Conditioning Tutorial</title>
 </head>
 <body>
     <div class="header">
-        <h1>Defense Tutorials</h1>
+        <h1>Conditioning Tutorials</h1>
         <button class="back-button" onclick="location.href='Main.html'">← Back to Home</button>
     </div>
 
     <div class="skill-container">
         <div class="skill-level beginner">
-            <h2>Beginner Level 🛡️</h2>
+            <h2>Beginner Level 💪</h2>
             <ul>
-                <li>Defensive Stance</li>
-                <li>Footwork Basics</li>
-                <li>On-Ball Defense</li>
-                <li>Basic Help Defense</li>
+                <li>Basic Endurance Training</li>
+                <li>Dynamic Stretching</li>
+                <li>Core Strengthening</li>
+                <li>Sprint Fundamentals</li>
             </ul>
-            <button class="tutorial-button" onclick="location.href='beginner-defense.html'">Start Training</button>
+            <button class="tutorial-button" onclick="location.href='beginner-conditioning.html'">Start Training</button>
         </div>
 
         <div class="skill-level intermediate">
-            <h2>Intermediate Level 🛡️🛡️</h2>
+            <h2>Intermediate Level 💪💪</h2>
             <ul>
-                <li>Ball Screen Defense</li>
-                <li>Close-Out Techniques</li>
-                <li>Help and Recover</li>
-                <li>Zone Defense Basics</li>
+                <li>Plyometric Exercises</li>
+                <li>Agility Drills</li>
+                <li>Circuit Training</li>
+                <li>Speed and Power</li>
             </ul>
-            <button class="tutorial-button" onclick="location.href='intermediate-defense.html'">Start Training</button>
+            <button class="tutorial-button" onclick="location.href='intermediate-conditioning.html'">Start Training</button>
         </div>
 
         <div class="skill-level advanced">
-            <h2>Advanced Level 🛡️🛡️🛡️</h2>
+            <h2>Advanced Level 💪💪💪</h2>
             <ul>
-                <li>Full Court Press</li>
-                <li>Advanced Rotations</li>
-                <li>Pick and Roll Defense</li>
-                <li>Defensive Leadership</li>
+                <li>High-Intensity Intervals</li>
+                <li>Explosive Power Training</li>
+                <li>Complex Conditioning</li>
+                <li>Game-Speed Endurance</li>
             </ul>
-            <button class="tutorial-button" onclick="location.href='advanced-defense.html'">Start Training</button>
+            <button class="tutorial-button" onclick="location.href='advanced-conditioning.html'">Start Training</button>
         </div>
     </div>
 
@@ -94,6 +94,12 @@
             padding: 20px;
             width: 300px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-level:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .tutorial-button {
@@ -105,7 +111,7 @@
             cursor: pointer;
             width: 100%;
             margin-top: 20px;
-            transition: transform 0.2s;
+            transition: all 0.2s ease;
         }
 
         .tutorial-button:hover {
@@ -121,6 +127,7 @@
 
         li {
             margin: 10px 0;
+            line-height: 1.5;
         }
 
         @media screen and (max-width: 768px) {

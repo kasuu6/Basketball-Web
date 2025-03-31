@@ -11,6 +11,33 @@
         <button class="back-button" onclick="location.href='Main.html'">← Back to Home</button>
     </div>
 
+    <div class="progress-section">
+        <h2>Your Progress</h2>
+        <div class="level-progress">
+            <div class="progress-card">
+                <h3>Beginner</h3>
+                <div class="progress-bar">
+                    <div class="progress" id="beginnerProgress"></div>
+                </div>
+                <span class="progress-text">0%</span>
+            </div>
+            <div class="progress-card">
+                <h3>Intermediate</h3>
+                <div class="progress-bar">
+                    <div class="progress" id="intermediateProgress"></div>
+                </div>
+                <span class="progress-text">0%</span>
+            </div>
+            <div class="progress-card">
+                <h3>Advanced</h3>
+                <div class="progress-bar">
+                    <div class="progress" id="advancedProgress"></div>
+                </div>
+                <span class="progress-text">0%</span>
+            </div>
+        </div>
+    </div>
+
     <div class="skill-container">
         <div class="skill-level beginner">
             <h2>Beginner Level 🛡️</h2>
@@ -123,6 +150,43 @@
             margin: 10px 0;
         }
 
+        .progress-section {
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .level-progress {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .progress-card {
+            flex: 1;
+            text-align: center;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #000000;
+            transition: width 0.3s ease;
+        }
+
         @media screen and (max-width: 768px) {
             .skill-container {
                 flex-direction: column;
@@ -141,7 +205,32 @@
                 top: 10px;
                 transform: none;
             }
+
+            .level-progress {
+                flex-direction: column;
+            }
         }
     </style>
+
+    <script>
+        window.onload = function() {
+            // Load progress for each level
+            const beginnerProgress = localStorage.getItem('beginnerDefenseProgress') || 0;
+            const intermediateProgress = localStorage.getItem('intermediateDefenseProgress') || 0;
+            const advancedProgress = localStorage.getItem('advancedDefenseProgress') || 0;
+
+            // Update progress bars
+            updateProgressBar('beginnerProgress', beginnerProgress);
+            updateProgressBar('intermediateProgress', intermediateProgress);
+            updateProgressBar('advancedProgress', advancedProgress);
+        }
+
+        function updateProgressBar(id, progress) {
+            const progressBar = document.getElementById(id);
+            const progressText = progressBar.parentElement.nextElementSibling;
+            progressBar.style.width = progress + '%';
+            progressText.textContent = Math.round(progress) + '%';
+        }
+    </script>
 </body>
 </html>

@@ -7,147 +7,286 @@
 </head>
 <body>
     <div class="header">
+        <div class="logo">🏀</div>
         <h1>Basketball Training Hub</h1>
-        <p>Master the fundamentals with our easy-to-follow tutorials</p>
-    </div>
-
-    <div class="login-container">
-        <button class="login-button" onclick="location.href='login.html'">
+        <p>Level Up Your Game</p>
+        <button class="login-button pulse-animation" onclick="location.href='login.html'">
             Login / Sign Up
         </button>
     </div>
 
+    <div class="hero-section">
+        <h2>Master Your Skills</h2>
+        <p>Choose your training path and start improving today!</p>
+    </div>
+
+    <div class="intro-section">
+        <h2>Welcome to Basketball</h2>
+        <div class="intro-content">
+            <div class="intro-text">
+                <p>Basketball is an exciting team sport played between two teams of five players each. The game combines skill, strategy, and athleticism as players attempt to score points by shooting a ball through the opponent's hoop while preventing them from scoring through defensive play.</p>
+                <div class="game-facts">
+                    <div class="fact-card">
+                        <span class="fact-icon">⛹️‍♂️</span>
+                        <h3>Team Play</h3>
+                        <p>5 players per team working together on offense and defense</p>
+                    </div>
+                    <div class="fact-card">
+                        <span class="fact-icon">🏆</span>
+                        <h3>Scoring</h3>
+                        <p>2 points for field goals, 3 points for long-range shots, 1 point for free throws</p>
+                    </div>
+                    <div class="fact-card">
+                        <span class="fact-icon">⏱️</span>
+                        <h3>Game Time</h3>
+                        <p>Four quarters of intense action and strategy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-section">
+        <h2>About Basketball Training Hub</h2>
+        <div class="about-content">
+            <p>We're passionate about helping players of all skill levels improve their game. Our comprehensive training program covers fundamental skills through advanced techniques.</p>
+            <div class="features">
+                <div class="feature-card">
+                    <span class="feature-icon">📚</span>
+                    <h3>Structured Learning</h3>
+                    <p>Progressive tutorials from basics to advanced skills</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📈</span>
+                    <h3>Track Progress</h3>
+                    <p>Monitor your improvement with our tracking system</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h3>Expert Guidance</h3>
+                    <p>Learn proper techniques and best practices</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="tutorial-grid">
-        <button class="tutorial-button" onclick="location.href='Dribbling.html'">
-            Basic Dribbling 🏀
+        <button class="tutorial-card" onclick="location.href='Dribbling.html'">
+            <div class="card-icon">🏀</div>
+            <h3>Dribbling</h3>
+            <p>Master ball control</p>
+            <div class="card-arrow">→</div>
         </button>
-        <button class="tutorial-button" onclick="location.href='Shooting.html'">
-            Shooting Form 🎯
+
+        <button class="tutorial-card" onclick="location.href='Shooting.html'">
+            <div class="card-icon">🎯</div>
+            <h3>Shooting</h3>
+            <p>Perfect your shot</p>
+            <div class="card-arrow">→</div>
         </button>
-        <button class="tutorial-button" onclick="location.href='Layup.html'">
-            Layup Techniques 🏃‍♂️
+
+        <button class="tutorial-card" onclick="location.href='Layup.html'">
+            <div class="card-icon">🏃‍♂️</div>
+            <h3>Layups</h3>
+            <p>Score with finesse</p>
+            <div class="card-arrow">→</div>
         </button>
-        <button class="tutorial-button" onclick="location.href='Passing.html'">
-            Passing Skills 🤝
+
+        <button class="tutorial-card" onclick="location.href='Passing.html'">
+            <div class="card-icon">🤝</div>
+            <h3>Passing</h3>
+            <p>Connect with teammates</p>
+            <div class="card-arrow">→</div>
         </button>
-        <button class="tutorial-button" onclick="location.href='Defense.html'">
-            Defense Basics 🛡️
+
+        <button class="tutorial-card" onclick="location.href='Defense.html'">
+            <div class="card-icon">🛡️</div>
+            <h3>Defense</h3>
+            <p>Lock down opponents</p>
+            <div class="card-arrow">→</div>
         </button>
-        <button class="tutorial-button" onclick="location.href='Conditioning.html'">
-            Conditioning 💪
+
+        <button class="tutorial-card" onclick="location.href='Conditioning.html'">
+            <div class="card-icon">💪</div>
+            <h3>Conditioning</h3>
+            <p>Build stamina</p>
+            <div class="card-arrow">→</div>
         </button>
     </div>
-</body>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
-        background-color: #f4f4f4;
-        text-align: center;
-        min-height: 100vh;
-    }
 
-    .header {
-        background-color: #000000;
-        color: white;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 30px;
-        width: 90%;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .tutorial-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        width: 90%;
-        max-width: 500px;
-        margin: 0 auto;
-        padding-bottom: 40px;
-    }
-
-    .tutorial-button {
-        background-color: #020202;
-        color: white;
-        padding: 20px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        font-size: clamp(16px, 2.5vw, 18px);
-        transition: transform 0.2s;
-        width: 100%;
-        max-width: 500px;
-    }
-
-    .login-container {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
-    }
-
-    .login-button {
-        background-color: #020202;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: clamp(14px, 2vw, 16px);
-        transition: all 0.2s ease;
-    }
-
-    /* Media Queries for Responsiveness */
-    @media screen and (max-width: 768px) {
+    <style>
         body {
-            padding: 10px;
-        }
-
-        .login-container {
-            position: static;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .login-button {
-            width: 80%;
-            max-width: 300px;
-            padding: 15px;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
+            min-height: 100vh;
         }
 
         .header {
-            padding: 15px;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        .header h1 {
-            font-size: 24px;
+        .logo {
+            font-size: 3rem;
+            animation: bounce 2s infinite;
         }
-    }
 
-    @media screen and (min-width: 1440px) {
+        .hero-section {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #333;
+        }
+
+        .intro-section, .about-section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .intro-section {
+            background: white;
+        }
+
+        .about-section {
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            color: white;
+        }
+
+        .intro-content, .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .game-facts, .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .fact-card, .feature-card {
+            background: #f8f8f8;
+            padding: 2rem;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .about-section .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .fact-card:hover, .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fact-icon, .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
         .tutorial-grid {
-            max-width: 700px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .tutorial-button {
-            padding: 25px;
+        .tutorial-card {
+            background: white;
+            border: none;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-    }
 
-    /* Maintain hover effects */
-    .tutorial-button:hover {
-        transform: scale(1.05);
-        background-color: #1f1e1e;
-    }
+        .tutorial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
 
-    .login-button:hover {
-        background-color: #1f1e1e;
-        transform: scale(1.05);
-    }
-</style>
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-arrow {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .tutorial-card:hover .card-arrow {
+            opacity: 1;
+            transform: translateX(5px);
+        }
+
+        .login-button {
+            background: #FF6B1A;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @media screen and (max-width: 768px) {
+            .tutorial-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+
+            .header {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            .intro-section, .about-section {
+                padding: 2rem 1rem;
+            }
+
+            .game-facts, .features {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+</body>
 </html>
