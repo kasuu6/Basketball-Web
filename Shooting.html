@@ -7,141 +7,262 @@
 </head>
 <body>
     <div class="header">
-        <h1>Shooting Tutorials</h1>
         <button class="back-button" onclick="location.href='Main.html'">← Back to Home</button>
+        <h1>Shooting Drills</h1>
     </div>
 
-    <div class="skill-container">
-        <div class="skill-level beginner">
-            <h2>Beginner Level 🎯</h2>
-            <ul>
-                <li>BEEF Method (Balance, Elbow, Eyes, Follow-through)</li>
-                <li>Basic Form Shooting</li>
-                <li>Free Throw Technique</li>
-                <li>Shot Preparation</li>
-            </ul>
-            <button class="tutorial-button" onclick="location.href='beginner-shooting.html'">Start Training</button>
+    <div class="drills-container">
+        <div class="drill-card">
+            <div class="drill-header">
+                <span class="drill-icon">🎯</span>
+                <h3>Form Shooting</h3>
+                <span class="sets">5 sets</span>
+                <span class="duration">10 shots/set</span>
+            </div>
+            <div class="drill-content">
+                <div class="drill-gif">
+                    <img src="basketball gif/shooting-form.gif" alt="Shooting Form">
+                </div>
+                <div class="drill-details">
+                    <div class="drill-instructions">
+                        <h4>Key Points:</h4>
+                        <ul>
+                            <li>BEEF: Balance, Elbow, Eyes, Follow-through</li>
+                            <li>Start close to basket (3-5 feet)</li>
+                            <li>Focus on perfect form</li>
+                            <li>Hold follow-through until ball hits net</li>
+                        </ul>
+                    </div>
+                    <div class="shot-tracker">
+                        <span>Shot Tracking:</span>
+                        <div class="make-counter">
+                            <button onclick="trackShot(0, true)">Made ✓</button>
+                            <button onclick="trackShot(0, false)">Miss ✗</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="skill-level intermediate">
-            <h2>Intermediate Level 🎯🎯</h2>
-            <ul>
-                <li>Catch and Shoot</li>
-                <li>Pull-Up Jumpers</li>
-                <li>Mid-Range Game</li>
-                <li>Shot Off Screens</li>
-            </ul>
-            <button class="tutorial-button" onclick="location.href='intermediate-shooting.html'">Start Training</button>
+        <div class="drill-card">
+            <div class="drill-header">
+                <span class="drill-icon">⚡</span>
+                <h3>Catch and Shoot</h3>
+                <span class="sets">4 sets</span>
+                <span class="duration">15 shots/set</span>
+            </div>
+            <div class="drill-content">
+                <div class="drill-gif">
+                    <img src="basketball gif/catch-and-shoot.gif" alt="Catch and Shoot">
+                </div>
+                <div class="drill-details">
+                    <div class="drill-instructions">
+                        <h4>Key Points:</h4>
+                        <ul>
+                            <li>Quick feet setup</li>
+                            <li>Catch ready to shoot</li>
+                            <li>Quick release</li>
+                            <li>Game speed reps</li>
+                        </ul>
+                    </div>
+                    <div class="shot-tracker">
+                        <span>Shot Tracking:</span>
+                        <div class="make-counter">
+                            <button onclick="trackShot(1, true)">Made ✓</button>
+                            <button onclick="trackShot(1, false)">Miss ✗</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="skill-level advanced">
-            <h2>Advanced Level 🎯🎯🎯</h2>
-            <ul>
-                <li>Three-Point Range</li>
-                <li>Shooting Off the Dribble</li>
-                <li>Fadeaway Shots</li>
-                <li>Game-Speed Shooting</li>
-            </ul>
-            <button class="tutorial-button" onclick="location.href='advanced-shooting.html'">Start Training</button>
+        <div class="drill-card">
+            <div class="drill-header">
+                <span class="drill-icon">🔄</span>
+                <h3>Ball Pickup Drill</h3>
+                <span class="sets">4 sets</span>
+                <span class="duration">12 shots/set</span>
+            </div>
+            <div class="drill-content">
+                <div class="drill-gif">
+                    <img src="basketball gif/ball-pickup-drill.gif" alt="Ball Pickup Drill">
+                </div>
+                <div class="drill-details">
+                    <div class="drill-instructions">
+                        <h4>Key Points:</h4>
+                        <ul>
+                            <li>Quick pickup into shooting motion</li>
+                            <li>Maintain shooting form</li>
+                            <li>Stay balanced throughout</li>
+                            <li>Simulate game situations</li>
+                        </ul>
+                    </div>
+                    <div class="shot-tracker">
+                        <span>Shot Tracking:</span>
+                        <div class="make-counter">
+                            <button onclick="trackShot(2, true)">Made ✓</button>
+                            <button onclick="trackShot(2, false)">Miss ✗</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div class="drill-card">
+            <div class="drill-header">
+                <span class="drill-icon">💫</span>
+                <h3>Ball Pull-Up Jumpers</h3>
+                <span class="sets">3 sets</span>
+                <span class="duration">8 shots/set</span>
+            </div>
+            <div class="drill-content">
+                <div class="drill-gif">
+                    <img src="basketball gif/ball-pull-ups.gif" alt="Pull Up Jumpers">
+                </div>
+                <div class="drill-details">
+                    <div class="drill-instructions">
+                        <h4>Key Points:</h4>
+                        <ul>
+                            <li>Dribble into pull-up motion</li>
+                            <li>Stop on balance</li>
+                            <li>Quick, fluid transition</li>
+                            <li>Hold follow through</li>
+                        </ul>
+                    </div>
+                    <div class="shot-tracker">
+                        <span>Shot Tracking:</span>
+                        <div class="make-counter">
+                            <button onclick="trackShot(3, true)">Made ✓</button>
+                            <button onclick="trackShot(3, false)">Miss ✗</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add remaining drills following the same pattern -->
     </div>
 
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ff8c00, #ff4500);
             min-height: 100vh;
         }
 
         .header {
-            background-color: #000000;
+            background: #000;
             color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
+            padding: 1rem;
             text-align: center;
             position: relative;
         }
 
         .back-button {
             position: absolute;
-            left: 20px;
+            left: 1rem;
             top: 50%;
             transform: translateY(-50%);
-            background-color: white;
-            color: black;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .skill-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .skill-level {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            width: 300px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .tutorial-button {
-            background-color: #000000;
+            background: none;
+            border: 2px solid white;
             color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
             cursor: pointer;
+        }
+
+        .drills-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .drill-card {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .drill-header {
+            background: #000;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .drill-content {
+            display: flex;
+            padding: 1.5rem;
+            gap: 2rem;
+        }
+
+        .drill-gif {
+            flex: 0 0 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .drill-gif img {
             width: 100%;
-            margin-top: 20px;
-            transition: transform 0.2s;
+            height: 180px;
+            object-fit: cover;
+            object-position: center;
         }
 
-        .tutorial-button:hover {
-            transform: scale(1.05);
-            background-color: #1f1e1e;
+        .shot-tracker {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
         }
 
-        ul {
-            text-align: left;
-            padding-left: 20px;
-            margin: 20px 0;
+        .make-counter {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
         }
 
-        li {
-            margin: 10px 0;
+        .make-counter button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .make-counter button:first-child {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .make-counter button:last-child {
+            background: #f44336;
+            color: white;
         }
 
         @media screen and (max-width: 768px) {
-            .skill-container {
+            .drill-content {
                 flex-direction: column;
-                align-items: center;
             }
 
-            .skill-level {
-                width: 90%;
-            }
-
-            .header {
-                padding: 40px 20px;
-            }
-
-            .back-button {
-                top: 10px;
-                transform: none;
+            .drill-gif {
+                width: 100%;
             }
         }
     </style>
+
+    <script>
+        function trackShot(drillIndex, made) {
+            // Implementation for shot tracking
+            console.log(`Drill ${drillIndex}: ${made ? 'Made' : 'Missed'} shot`);
+        }
+    </script>
 </body>
 </html>

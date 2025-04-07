@@ -3,152 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basketball Conditioning Tutorial</title>
+    <title>Basketball Conditioning - Beginner Level</title>
 </head>
 <body>
     <div class="header">
-        <h1>Conditioning Tutorials</h1>
-        <button class="back-button" onclick="location.href='Main.html'">← Back to Home</button>
+        <button class="back-button" onclick="location.href='Conditioning.html'">← Back</button>
+        <h1>Beginner Conditioning</h1>
     </div>
 
-    <div class="skill-container">
-        <div class="skill-level beginner">
-            <h2>Beginner Level 💪</h2>
-            <ul>
-                <li>Basic Endurance Training</li>
-                <li>Dynamic Stretching</li>
-                <li>Core Strengthening</li>
-                <li>Sprint Fundamentals</li>
-            </ul>
-            <button class="tutorial-button" onclick="location.href='beginner-conditioning.html'">Start Training</button>
-        </div>
-
-        <div class="skill-level intermediate">
-            <h2>Intermediate Level 💪💪</h2>
-            <ul>
-                <li>Plyometric Exercises</li>
-                <li>Agility Drills</li>
-                <li>Circuit Training</li>
-                <li>Speed and Power</li>
-            </ul>
-            <button class="tutorial-button" onclick="location.href='intermediate-conditioning.html'">Start Training</button>
-        </div>
-
-        <div class="skill-level advanced">
-            <h2>Advanced Level 💪💪💪</h2>
-            <ul>
-                <li>High-Intensity Intervals</li>
-                <li>Explosive Power Training</li>
-                <li>Complex Conditioning</li>
-                <li>Game-Speed Endurance</li>
-            </ul>
-            <button class="tutorial-button" onclick="location.href='advanced-conditioning.html'">Start Training</button>
+    <div class="drills-container">
+        <div class="drill-card">
+            <div class="drill-header">
+                <span class="drill-icon">🏃</span>
+                <h3>Cone Layup Sprint</h3>
+                <span class="sets">3 sets</span>
+                <span class="duration">60 sec/set</span>
+            </div>
+            <div class="drill-content">
+                <div class="drill-gif">
+                    <img src="basketball gif/cone-layup-drill.gif" alt="Cone Layup Sprint Drill">
+                </div>
+                <div class="drill-details">
+                    <div class="drill-instructions">
+                        <h4>Instructions:</h4>
+                        <ul>
+                            <li>Set up 5 cones in zigzag pattern</li>
+                            <li>Sprint around each cone</li>
+                            <li>Finish with layup at basket</li>
+                            <li>Jog back to start position</li>
+                            <li>Repeat for duration of set</li>
+                        </ul>
+                    </div>
+                    <div class="intensity-level">
+                        <span>Intensity:</span>
+                        <div class="intensity-meter">
+                            <span class="filled"></span>
+                            <span class="filled"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="progress-tracker">
+                        <span>Set Progress:</span>
+                        <div class="set-counter" id="layup-sprint-counter">0/3</div>
+                        <button onclick="updateSets('layup-sprint-counter', 3)">Complete Set</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ff8c00, #ff4500);
             min-height: 100vh;
         }
 
         .header {
-            background-color: #000000;
+            background: #000;
             color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
+            padding: 1rem;
             text-align: center;
             position: relative;
         }
 
         .back-button {
             position: absolute;
-            left: 20px;
+            left: 1rem;
             top: 50%;
             transform: translateY(-50%);
-            background-color: white;
-            color: black;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .skill-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .skill-level {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            width: 300px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .skill-level:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .tutorial-button {
-            background-color: #000000;
+            background: none;
+            border: 2px solid white;
             color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
             cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .drills-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .drill-card {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 2px solid #ff4500;
+        }
+
+        .drill-header {
+            background: #ff4500;
+            color: white;
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .drill-content {
+            display: flex;
+            padding: 2rem;
+            gap: 3rem;
+            background: #f9f9f9;
+            align-items: start;
+        }
+
+        .drill-gif {
+            flex: 0 0 350px;
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .drill-gif img {
             width: 100%;
-            margin-top: 20px;
-            transition: all 0.2s ease;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
 
-        .tutorial-button:hover {
-            transform: scale(1.05);
-            background-color: #1f1e1e;
+        .intensity-meter {
+            display: flex;
+            gap: 0.3rem;
+            margin-top: 0.5rem;
         }
 
-        ul {
-            text-align: left;
-            padding-left: 20px;
-            margin: 20px 0;
+        .intensity-meter span {
+            width: 30px;
+            height: 8px;
+            background: #ddd;
+            border-radius: 4px;
         }
 
-        li {
-            margin: 10px 0;
-            line-height: 1.5;
+        .intensity-meter .filled {
+            background: #ff4500;
         }
 
         @media screen and (max-width: 768px) {
-            .skill-container {
+            .drill-content {
                 flex-direction: column;
-                align-items: center;
             }
 
-            .skill-level {
-                width: 90%;
-            }
-
-            .header {
-                padding: 40px 20px;
-            }
-
-            .back-button {
-                top: 10px;
-                transform: none;
+            .drill-gif {
+                width: 100%;
+                height: 200px;
             }
         }
     </style>
+
+    <script>
+        function updateSets(counterId, maxSets) {
+            const counter = document.getElementById(counterId);
+            const [current, total] = counter.textContent.split('/').map(Number);
+            if (current < total) {
+                counter.textContent = `${current + 1}/${total}`;
+            }
+        }
+    </script>
 </body>
 </html>

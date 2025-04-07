@@ -6,230 +6,339 @@
     <title>Basketball Defense Tutorial</title>
 </head>
 <body>
+
     <div class="header">
-        <h1>Defense Tutorials</h1>
         <button class="back-button" onclick="location.href='Main.html'">← Back to Home</button>
+        <h1>Defense Fundamentals</h1>
     </div>
 
-    <div class="progress-section">
-        <h2>Your Progress</h2>
-        <div class="level-progress">
-            <div class="progress-card">
-                <h3>Beginner</h3>
-                <div class="progress-bar">
-                    <div class="progress" id="beginnerProgress"></div>
-                </div>
-                <span class="progress-text">0%</span>
+    <div class="drills-container">
+        <div class="drill-card">
+            <div class="drill-header">
+                <span class="drill-icon">🛡️</span>
+                <h3>Deny and Flash Defense</h3>
+                <span class="sets">4 sets</span>
+                <span class="duration">45 sec/set</span>
             </div>
-            <div class="progress-card">
-                <h3>Intermediate</h3>
-                <div class="progress-bar">
-                    <div class="progress" id="intermediateProgress"></div>
+
+            <div class="drill-content">
+                <div class="drill-gif">
+                    <img src="basketball gif/deny-flash-drill.gif" alt="Deny Flash Defense Drill">
                 </div>
-                <span class="progress-text">0%</span>
-            </div>
-            <div class="progress-card">
-                <h3>Advanced</h3>
-                <div class="progress-bar">
-                    <div class="progress" id="advancedProgress"></div>
+                <div class="drill-details">
+                    <div class="drill-instructions">
+                        <h4>Instructions:</h4>
+                        <ul>
+                            <li>Start in defensive stance</li>
+                            <li>Maintain ball-you-man triangle</li>
+                            <li>Quick feet to deny passing lanes</li>
+                            <li>React to offensive player movement</li>
+                        </ul>
+                    </div>
+                    <div class="progress-tracker">
+                        <span>Set Progress:</span>
+                        <div class="set-counter" id="deny-defense-counter">0/4</div>
+                        <button onclick="updateSets('deny-defense-counter', 4)">Complete Set</button>
+                    </div>
                 </div>
-                <span class="progress-text">0%</span>
             </div>
         </div>
-    </div>
 
-    <div class="skill-container">
-        <div class="skill-level beginner">
-            <h2>Beginner Level 🛡️</h2>
-            <ul>
-                <li>Defensive Stance</li>
-                <li>Footwork Basics</li>
-                <li>On-Ball Defense</li>
-                <li>Basic Help Defense</li>
-            </ul>
-            <button class="tutorial-button" onclick="location.href='beginner-defense.html'">Start Training</button>
+        <div class="drill-card">
+            <div class="drill-header">
+                <span class="drill-icon">🏃</span>
+                <h3>Pass and Cut Defense</h3>
+                <span class="sets">3 sets</span>
+                <span class="duration">60 sec/set</span>
+            </div>
+            <div class="drill-content">
+                <div class="drill-gif">
+                    <img src="basketball gif/pass-cut-drill.gif" alt="Pass Cut Defense Drill">
+                </div>
+                <div class="drill-details">
+                    <div class="drill-instructions">
+                        <h4>Instructions:</h4>
+                        <ul>
+                            <li>Track offensive player movement</li>
+                            <li>Stay between man and basket</li>
+                            <li>Communicate on screens</li>
+                            <li>Quick defensive slides</li>
+                        </ul>
+                    </div>
+                    <div class="progress-tracker">
+                        <span>Set Progress:</span>
+                        <div class="set-counter" id="pass-cut-counter">0/3</div>
+                        <button onclick="updateSets('pass-cut-counter', 3)">Complete Set</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="skill-level intermediate">
-            <h2>Intermediate Level 🛡️🛡️</h2>
-            <ul>
-                <li>Ball Screen Defense</li>
-                <li>Close-Out Techniques</li>
-                <li>Help and Recover</li>
-                <li>Zone Defense Basics</li>
-            </ul>
-            <button class="tutorial-button" onclick="location.href='intermediate-defense.html'">Start Training</button>
-        </div>
-
-        <div class="skill-level advanced">
-            <h2>Advanced Level 🛡️🛡️🛡️</h2>
-            <ul>
-                <li>Full Court Press</li>
-                <li>Advanced Rotations</li>
-                <li>Pick and Roll Defense</li>
-                <li>Defensive Leadership</li>
-            </ul>
-            <button class="tutorial-button" onclick="location.href='advanced-defense.html'">Start Training</button>
+        <div class="drill-card">
+            <div class="drill-header">
+                <span class="drill-icon">🔒</span>
+                <h3>Tight Shell Defense</h3>
+                <span class="sets">4 sets</span>
+                <span class="duration">30 sec/set</span>
+            </div>
+            <div class="drill-content">
+                <div class="drill-gif">
+                    <img src="basketball gif/tight-shell-drill.gif" alt="Tight Shell Defense Drill">
+                </div>
+                <div class="drill-details">
+                    <div class="drill-instructions">
+                        <h4>Instructions:</h4>
+                        <ul>
+                            <li>Maintain help-side position</li>
+                            <li>Quick rotations on penetration</li>
+                            <li>Active hands in passing lanes</li>
+                            <li>Close out with high hands</li>
+                        </ul>
+                    </div>
+                    <div class="progress-tracker">
+                        <span>Set Progress:</span>
+                        <div class="set-counter" id="shell-defense-counter">0/4</div>
+                        <button onclick="updateSets('shell-defense-counter', 4)">Complete Set</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ff8c00, #ff4500);
             min-height: 100vh;
         }
 
         .header {
-            background-color: #000000;
+            background: #000;
             color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
+            padding: 1rem;
             text-align: center;
             position: relative;
         }
 
         .back-button {
             position: absolute;
-            left: 20px;
+            left: 1rem;
             top: 50%;
             transform: translateY(-50%);
-            background-color: white;
-            color: black;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .skill-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .skill-level {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            width: 300px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .tutorial-button {
-            background-color: #000000;
+            background: none;
+            border: 2px solid white;
             color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
             cursor: pointer;
-            width: 100%;
-            margin-top: 20px;
-            transition: transform 0.2s;
+            transition: all 0.3s ease;
         }
 
-        .tutorial-button:hover {
-            transform: scale(1.05);
-            background-color: #1f1e1e;
+        .back-button:hover {
+            background: white;
+            color: black;
         }
 
-        ul {
-            text-align: left;
-            padding-left: 20px;
-            margin: 20px 0;
-        }
-
-        li {
-            margin: 10px 0;
-        }
-
-        .progress-section {
+        .drills-container {
             max-width: 1200px;
-            margin: 0 auto 30px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 3rem auto;
+            padding: 0 2rem;
+            display: grid;
+            gap: 2.5rem;
         }
 
-        .level-progress {
+        .drill-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 2px solid #ff4500;
             display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            margin-top: 20px;
+            flex-direction: column;
         }
 
-        .progress-card {
+        .drill-header {
+            background: #ff4500;
+            color: white;
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .drill-icon {
+            font-size: 1.5rem;
+        }
+
+        .drill-header h3 {
+            margin: 0;
             flex: 1;
-            text-align: center;
         }
 
-        .progress-bar {
-            width: 100%;
-            height: 20px;
-            background-color: #e0e0e0;
+        .sets, .duration {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .drill-content {
+            display: flex;
+            padding: 2rem;
+            gap: 3rem;
+            background: #f9f9f9;
+            align-items: start;
+            min-height: 300px;
+        }
+
+        .drill-gif {
+            flex: 0 0 350px;
+            height: 250px;
             border-radius: 10px;
             overflow: hidden;
-            margin: 10px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .progress {
-            width: 0%;
+        .drill-gif img {
+            width: 100%;
             height: 100%;
-            background-color: #000000;
-            transition: width 0.3s ease;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .drill-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .drill-instructions {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .drill-instructions h4 {
+            margin: 0 0 1rem 0;
+            color: #333;
+            font-size: 1.2rem;
+        }
+
+        .drill-instructions ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .drill-instructions li {
+            margin-bottom: 1rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .progress-tracker {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .set-counter {
+            font-size: 1.2rem;
+            color: #333;
+            margin: 0.5rem 0;
+        }
+
+        .progress-tracker button {
+            width: 100%;
+            background: linear-gradient(135deg, #ff4500, #ff6b00);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 69, 0, 0.3);
+        }
+
+        .progress-tracker button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 69, 0, 0.4);
+        }
+
+        @media screen and (max-width: 1024px) {
+            .drill-content {
+                flex-direction: column;
+                padding: 1.5rem;
+                min-height: auto;
+            }
+
+            .drill-gif {
+                flex: none;
+                width: 100%;
+                height: 200px;
+            }
+
+            .drill-details {
+                gap: 1.5rem;
+            }
+
+            .drill-instructions, 
+            .progress-tracker {
+                padding: 1.5rem;
+            }
         }
 
         @media screen and (max-width: 768px) {
-            .skill-container {
-                flex-direction: column;
-                align-items: center;
+            .drills-container {
+                padding: 0 1rem;
+                margin: 2rem auto;
+                gap: 2rem;
             }
 
-            .skill-level {
-                width: 90%;
+            .drill-header {
+                padding: 1rem;
+                gap: 1rem;
             }
 
-            .header {
-                padding: 40px 20px;
-            }
-
-            .back-button {
-                top: 10px;
-                transform: none;
-            }
-
-            .level-progress {
-                flex-direction: column;
+            .sets, .duration {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.8rem;
             }
         }
     </style>
 
     <script>
-        window.onload = function() {
-            // Load progress for each level
-            const beginnerProgress = localStorage.getItem('beginnerDefenseProgress') || 0;
-            const intermediateProgress = localStorage.getItem('intermediateDefenseProgress') || 0;
-            const advancedProgress = localStorage.getItem('advancedDefenseProgress') || 0;
-
-            // Update progress bars
-            updateProgressBar('beginnerProgress', beginnerProgress);
-            updateProgressBar('intermediateProgress', intermediateProgress);
-            updateProgressBar('advancedProgress', advancedProgress);
+        function updateSets(counterId, maxSets) {
+            const counter = document.getElementById(counterId);
+            const [current, total] = counter.textContent.split('/').map(Number);
+            if (current < total) {
+                counter.textContent = `${current + 1}/${total}`;
+                updateOverallProgress();
+            }
         }
 
-        function updateProgressBar(id, progress) {
-            const progressBar = document.getElementById(id);
-            const progressText = progressBar.parentElement.nextElementSibling;
-            progressBar.style.width = progress + '%';
-            progressText.textContent = Math.round(progress) + '%';
+        function updateOverallProgress() {
+            const totalSets = 11; // Total sets across all drills
+            const completedSets = [
+                'deny-defense-counter',
+                'pass-cut-counter',
+                'shell-defense-counter'
+            ].reduce((total, id) => {
+                const [current] = document.getElementById(id).textContent.split('/').map(Number);
+                return total + current;
+            }, 0);
+
+            const progress = (completedSets / totalSets) * 100;
+            updateProgressBar('beginnerProgress', progress);
         }
     </script>
 </body>
