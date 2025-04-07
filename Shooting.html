@@ -39,6 +39,11 @@
                             <button onclick="trackShot(0, true)">Made ✓</button>
                             <button onclick="trackShot(0, false)">Miss ✗</button>
                         </div>
+                        <div class="shot-stats">
+                            <span>Makes: <span class="makes">0</span></span>
+                            <span>Misses: <span class="misses">0</span></span>
+                            <span>Percentage: <span class="percentage">0%</span></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -71,6 +76,11 @@
                             <button onclick="trackShot(1, true)">Made ✓</button>
                             <button onclick="trackShot(1, false)">Miss ✗</button>
                         </div>
+                        <div class="shot-stats">
+                            <span>Makes: <span class="makes">0</span></span>
+                            <span>Misses: <span class="misses">0</span></span>
+                            <span>Percentage: <span class="percentage">0%</span></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -100,8 +110,13 @@
                     <div class="shot-tracker">
                         <span>Shot Tracking:</span>
                         <div class="make-counter">
-                            <button onclick="trackShot(2, true)">Made ✓</button>
-                            <button onclick="trackShot(2, false)">Miss ✗</button>
+                            <button onclick="trackShot(0, true)">Made ✓</button>
+                            <button onclick="trackShot(0, false)">Miss ✗</button>
+                        </div>
+                        <div class="shot-stats">
+                            <span>Makes: <span class="makes">0</span></span>
+                            <span>Misses: <span class="misses">0</span></span>
+                            <span>Percentage: <span class="percentage">0%</span></span>
                         </div>
                     </div>
                 </div>
@@ -134,6 +149,11 @@
                         <div class="make-counter">
                             <button onclick="trackShot(3, true)">Made ✓</button>
                             <button onclick="trackShot(3, false)">Miss ✗</button>
+                        </div>
+                        <div class="shot-stats">
+                            <span>Makes: <span class="makes">0</span></span>
+                            <span>Misses: <span class="misses">0</span></span>
+                            <span>Percentage: <span class="percentage">0%</span></span>
                         </div>
                     </div>
                 </div>
@@ -223,6 +243,23 @@
             padding-top: 1rem;
             border-top: 1px solid #eee;
         }
+        .shot-stats {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+        padding: 0.5rem;
+        background: #f5f5f5;
+        border-radius: 10px;
+        font-size: 0.9rem;
+     }
+
+        .shot-stats span {
+         color: #333;
+        }
+
+        .makes { color: #4CAF50; }
+        .misses { color: #f44336; }
+        .percentage { color: #2196F3; }
 
         .make-counter {
             display: flex;
@@ -256,13 +293,158 @@
                 width: 100%;
             }
         }
+        .shot-stats {
+        background: #f8f8f8;
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .makes { 
+        color: #4CAF50; 
+        font-weight: bold;
+    }
+
+    .misses { 
+        color: #f44336; 
+        font-weight: bold;
+    }
+
+    .percentage { 
+        color: #2196F3; 
+        font-weight: bold;
+    }
+
+    .alert-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .reset-btn {
+        background: #f44336 !important;
+    }
+
+    .drill-card {
+        position: relative;
+    }
+
+    .drill-card.active {
+        border: 2px solid #4CAF50;
+    }
     </style>
 
-    <script>
-        function trackShot(drillIndex, made) {
-            // Implementation for shot tracking
-            console.log(`Drill ${drillIndex}: ${made ? 'Made' : 'Missed'} shot`);
+<script>
+    function trackShot(drillIndex, made) {
+        const drillCard = document.querySelectorAll('.drill-card')[drillIndex];
+        const stats = drillCard.querySelector('.shot-stats');
+        
+        if (!stats) {
+            console.error('Shot stats not found for drill:', drillIndex);
+            return;
         }
-    </script>
+
+        const makes = stats.querySelector('.makes');
+        const misses = stats.querySelector('.misses');
+        const percentage = stats.querySelector('.percentage');
+        const durationText = drillCard.querySelector('.duration').textContent;
+        const shotsPerSet = parseInt(durationText.match(/\d+/)[0]);
+
+        // Update makes or misses
+        if (made) {
+            makes.textContent = parseInt(makes.textContent) + 1;
+        } else {
+            misses.textContent = parseInt(misses.textContent) + 1;
+        }
+
+        // Calculate and update percentage
+        const totalMakes = parseInt(makes.textContent);
+        const totalMisses = parseInt(misses.textContent);
+        const totalShots = totalMakes + totalMisses;
+        const shootingPercentage = Math.round((totalMakes / totalShots) * 100) || 0;
+        percentage.textContent = `${shootingPercentage}%`;
+
+        // Check if set is complete
+        if (totalShots % shotsPerSet === 0) {
+            saveSetStats(drillIndex, totalMakes, totalMisses);
+            showSetComplete(shootingPercentage, totalMakes, totalShots);
+        }
+    }
+
+    function showSetComplete(percentage, makes, total) {
+        const alert = document.createElement('div');
+        alert.className = 'set-complete-alert';
+        alert.innerHTML = `
+            <div class="alert-content">
+                <h3>Set Complete! 🎯</h3>
+                <p>Makes: ${makes}/${total}</p>
+                <p>Shooting Percentage: ${percentage}%</p>
+                <div class="alert-buttons">
+                    <button onclick="continueTraining(this)">Continue Training</button>
+                    <button onclick="resetStats(this)" class="reset-btn">Reset Stats</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(alert);
+    }
+
+    function continueTraining(button) {
+        button.closest('.set-complete-alert').remove();
+    }
+
+    function resetStats(button) {
+        const drillIndex = getCurrentDrillIndex();
+        const drillCard = document.querySelectorAll('.drill-card')[drillIndex];
+        const stats = drillCard.querySelector('.shot-stats');
+        
+        stats.querySelector('.makes').textContent = '0';
+        stats.querySelector('.misses').textContent = '0';
+        stats.querySelector('.percentage').textContent = '0%';
+        
+        button.closest('.set-complete-alert').remove();
+    }
+
+    function getCurrentDrillIndex() {
+        // Get the current active drill index
+        const activeDrill = document.querySelector('.drill-card.active');
+        return Array.from(document.querySelectorAll('.drill-card')).indexOf(activeDrill);
+    }
+</script>
+<style>
+    .set-complete-alert {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    .alert-content {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    .alert-content button {
+        background: #4CAF50;
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 25px;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+</style>
 </body>
 </html>
