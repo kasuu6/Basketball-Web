@@ -92,6 +92,47 @@
                 </div>
             </div>
         </div>
+
+        <div class="drill-card">
+            <div class="drill-header">
+                <span class="drill-icon">🔄</span>
+                <h3>Agility Ladder Sprints</h3>
+                <span class="sets">4 sets</span>
+                <span class="duration">30 sec/set</span>
+            </div>
+            <div class="drill-content">
+                <div class="drill-gif">
+                    <img src="basketball gif/ladder-sprints.gif" alt="Ladder Sprints Drill">
+                </div>
+                <div class="drill-details">
+                    <div class="drill-instructions">
+                        <h4>Instructions:</h4>
+                        <ul>
+                            <li>Place agility ladder on court</li>
+                            <li>High knees through each square</li>
+                            <li>One foot per square</li>
+                            <li>Stay on balls of feet</li>
+                            <li>Sprint back to start position</li>
+                        </ul>
+                    </div>
+                    <div class="intensity-level">
+                        <span>Intensity:</span>
+                        <div class="intensity-meter">
+                            <span class="filled"></span>
+                            <span class="filled"></span>
+                            <span class="filled"></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="progress-tracker">
+                        <span>Set Progress:</span>
+                        <div class="set-counter" id="ladder-sprint-counter">0/4</div>
+                        <button onclick="updateSets('ladder-sprint-counter', 4)">Complete Set</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -138,11 +179,10 @@
             margin-bottom: 2rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             overflow: hidden;
-            border: 2px solid #ff4500;
         }
 
         .drill-header {
-            background: #ff4500;
+            background: #000000;
             color: white;
             padding: 1.2rem 2rem;
             display: flex;
