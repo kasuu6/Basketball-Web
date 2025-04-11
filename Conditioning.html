@@ -8,7 +8,7 @@
 <body>
     <div class="header">
         <button class="back-button" onclick="location.href='Main.html'">← Back</button>
-        <h1>Beginner Conditioning</h1>
+        <h1>Basketball Conditioning Drill</h1>
     </div>
 
     <div class="drills-container">
@@ -52,7 +52,48 @@
                 </div>
             </div>
         </div>
+        <div class="drill-card">
+            <div class="drill-header">
+                <span class="drill-icon">⚡</span>
+                <h3>Full Court Run</h3>
+                <span class="sets">4 sets</span>
+                <span class="duration">45 sec/set</span>
+            </div>
+            <div class="drill-content">
+                <div class="drill-gif">
+                    <img src="basketball gif/full-court-run.gif" alt="Full Court Run Drill">
+                </div>
+                <div class="drill-details">
+                    <div class="drill-instructions">
+                        <h4>Instructions:</h4>
+                        <ul>
+                            <li>Start at baseline</li>
+                            <li>Sprint to half court and back</li>
+                            <li>Then sprint full court and back</li>
+                            <li>Keep head up while running</li>
+                            <li>Touch lines with foot on each turn</li>
+                        </ul>
+                    </div>
+                    <div class="intensity-level">
+                        <span>Intensity:</span>
+                        <div class="intensity-meter">
+                            <span class="filled"></span>
+                            <span class="filled"></span>
+                            <span class="filled"></span>
+                            <span class="filled"></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="progress-tracker">
+                        <span>Set Progress:</span>
+                        <div class="set-counter" id="full-court-counter">0/4</div>
+                        <button onclick="updateSets('full-court-counter', 4)">Complete Set</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 
     <style>
         body {
